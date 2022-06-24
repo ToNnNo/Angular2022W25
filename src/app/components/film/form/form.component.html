@@ -1,0 +1,23 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="mb-3">
+    <label for="title" class="form-label">Titre: </label>
+    <input type="text" id="title" class="form-control" placeholder="Titre du film"
+      formControlName="title" [ngClass]="{'is-invalid': titleIsValid()}"/>
+    <div class="invalid-feedback" *ngIf="titleIsValid()">Le titre est obligatoire</div>
+  </div>
+  <div class="mb-3">
+    <label for="released" class="form-label">Date de sortie: </label>
+    <input type="date" id="released" class="form-control" placeholder="Date de sortie"
+      formControlName="released" />
+  </div>
+  <div class="mb-3">
+    <label for="director" class="form-label">Réalisateur: </label>
+    <input type="text" id="director" class="form-control" placeholder="Nom du réalisateur"
+      formControlName="director" />
+  </div>
+  <div class="mb-3">
+    <label for="plot" class="form-label">Synopsis</label>
+    <textarea class="form-control" id="plot" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-outline-primary">Enregistrer</button>
+</form>

@@ -1,0 +1,32 @@
+<header>
+  <h2>Inscription</h2>
+</header>
+
+<p class="small">Penser à importer le module <strong>ReactiveFormsModule</strong> dans le <em>AppModule</em></p>
+
+<form [formGroup]="form" (ngSubmit)="signup()">
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email: </label>
+    <input type="text" id="email" class="form-control" placeholder="Adresse email ..."
+      formControlName="email" />
+    <p class="text-danger" *ngIf="validate('email') as message">{{ message }}</p>
+  </div>
+
+  <div class="mb-3">
+    <label for="password" class="form-label">Mot de passe: </label>
+    <input type="password" id="password" class="form-control" placeholder="Mot de passe ..."
+      formControlName="password" />
+      <p class="text-danger" *ngIf="validate('password') as message">{{ message }}</p>
+  </div>
+
+  <div class="mb-3">
+    <label for="confirmation" class="form-label">Confirmation: </label>
+    <input type="password" id="confirmation" class="form-control" placeholder="Confirmer le mot de passe ..."
+      formControlName="confirm" />
+    <p class="text-danger" *ngIf="validate('confirm') as message">{{ message }}</p>
+  </div>
+
+  <button type="submit" class="btn btn-outline-primary">S'inscrire</button>
+
+</form>

@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  apiBaseUrl: 'https://jsonplaceholder.typicode.com',
+  localApiBaseUrl: 'http://localhost:3000',
 };
